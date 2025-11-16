@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>This is the youtube page</title>  
+  <title>This is the youtube page</title>
+  <style>
+    nav {
+            width: 100%;
+            position:fixed;
+            top: 0;
+            background-color: rgb(76, 117, 211);
+            padding: 10px 0;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            float: left;
+        }
+
+        ul li a {
+            display: block;
+            color: white;
+            padding: 12px 18px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        ul li a:hover:not(.active) {
+            background-color: #FF00FF;
+        }
+  </style>
 </head>
 
 <body>
+  
   <nav>
     <ul>
       <li> <a href="main.html"> Homepage </a></li>
       <li> <a href="chat.html"> Chat </a></li>
     </ul>
   </nav>
+  
   <h1>Welcome to the Study Library!</h1>
   <h2>
     <p>This video library is where you can search for relevant videos to help you study</p>
   </h2>
+  
   <h3>Search topics</h3>
 </body>
   
