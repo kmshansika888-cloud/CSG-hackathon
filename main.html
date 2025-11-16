@@ -4,61 +4,134 @@
     <title>Main Page</title>
     <style>
         body {
-            text-align: center;
-            margin: 0;
-            padding-top: 60px; /* Prevent content from hiding behind nav */
-            font-family: Arial, sans-serif;
-        }
-
-        nav {
-            width: 100%;
-            position:fixed;
-            top: 0;
-            background-color: rgb(76, 117, 211);
-            padding: 10px 0;
-        }
-
-        ul {
-            list-style: none;
             margin: 0;
             padding: 0;
+            text-align: center;
+            font-family: 'Poppins', sans-serif; /* Updated font */
+            background-image: url('webbgi.jpg'); /* Replace placeholder */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
-        ul li {
-            float: left;
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            height: 60px;
+            background-color: #4A78E3;
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
         }
 
-        ul li a {
-            display: block;
-            color: white;
+        /* PROFILE ICON */
+        #profileIcon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            object-fit: cover;
+        }
+
+        /* LOGOUT POPUP */
+        #logoutPopup {
+            display: none;
+            position: absolute;
+            top: 55px;
+            left: 20px;
             padding: 12px 18px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            font-size: 15px;
+        }
+
+        #logoutPopup a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        #mainContainer {
+            margin-top: 100px;
+        }
+
+        /* CHATBOT ICON (ORANGE CIRCLE ONLY) */
+        #botCircle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        #botIcon {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        /* ASK ME BUTTON */
+        #askBtn {
+            display: inline-block;
+            background-color: rgba(0, 102, 255, 0.6); /* translucent blue */
+            padding: 12px 28px;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+            margin-top: 25px;
             text-decoration: none;
             font-weight: bold;
         }
 
-        ul li a:hover:not(.active) {
-            background-color: #FF00FF;
-        }
-
-        h1 {
-            margin-top: 20px;
+        #askBtn:hover {
+            background-color: rgba(0, 102, 255, 0.8);
         }
     </style>
 </head>
 
 <body>
+
+    <!-- NAVBAR -->
     <nav>
-        <ul>
-            <li><a href="login.html">Log out</a></li>
-        </ul>
+        <img id="profileIcon" src="" alt="profile"> <!-- Replace placeholder -->
+
+        <div id="logoutPopup">
+            <a href="login.html">Log out</a>
+        </div>
     </nav>
 
-    <h2>
-        <p><img src="logo.jpg"></p><br>
-        With our chatbot “Larry” (lol), you can find videos for the topics you are studying.</p>
-    </h2>
 
-    <h3><a href="chat.html">Try it out</a></h3>
+    <!-- MAIN CONTENT -->
+    <div id="mainContainer">
+        <div id="botCircle">
+            <img id="botIcon" src="appu.jpg" alt="bot icon">
+        </div> <!-- Replace placeholder -->
+
+        <h2>Appu's here to help you...</h2>
+
+        <a id="askBtn" href="chat.html">Ask Me</a>
+    </div>
+
+
+    <script>
+        const profileIcon = document.getElementById('profileIcon');
+        const logoutPopup = document.getElementById('logoutPopup');
+
+        profileIcon.addEventListener('click', () => {
+            logoutPopup.style.display = logoutPopup.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
 
 </body>
 </html>
